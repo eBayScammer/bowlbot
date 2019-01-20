@@ -22,5 +22,15 @@ async def on_message(message):
     if message.author.id != client.user.id and "max" in message.content:
         await client.send_message(message.channel, message.content.replace("max", "<:max:536609206829056014>"))
         await client.delete_message(message)
+        
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+    if message.content == "testing":
+        role = get(message.server.roles, name="Bot")
+        await client.add_roles(message.author, role)
+
+
 
 client.run(os.getenv('TOKEN'))
