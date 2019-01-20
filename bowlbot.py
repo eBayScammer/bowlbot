@@ -12,6 +12,7 @@ client = commands.Bot(command_prefix = "")
 @client.event
 async def on_ready():
     print("Bot is ready!")
+    await client.change_presence(game=discord.Game(name="say bowl"))
 
 @client.event
 async def on_message(message):
