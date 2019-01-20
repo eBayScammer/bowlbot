@@ -20,13 +20,4 @@ async def on_message(message):
         await client.send_message(message.channel, message.content.replace("bowl", "<:bowlcut:492887126820651028>"))
         await client.delete_message(message)
 
-@client.event
-async def on_message(message):
-    if message.author == client.user:
-        return
-    if message.content == 'i got the bot running 24/7 now wonder if its working':
-        role = get(message.server.roles, name='Bot')
-        await client.add_roles(message.author, role)
-
-
 client.run(os.getenv('TOKEN'))
