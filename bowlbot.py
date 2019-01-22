@@ -23,16 +23,12 @@ async def on_message(message):
     if message.author.id != client.user.id and "max" in message.content:
         await client.send_message(message.channel, message.content.replace("max", "<:max:536609206829056014>"))
         await client.delete_message(message)
-
-@client.event
-async def on_message(message):
     if message.author == client.user:
         return
     elif message.content.startswith("!8bowl"):
         await client.send_message(message.channel, random.choice(["It is certain",
                                                                   "It is decidedly so",
                                                                   "Very doubtful",
-                                                                  "Concentrate and ask again"]))
-                                                                
+                                                                  "Concentrate and ask again"]))     
         
 client.run(os.getenv('TOKEN'))
