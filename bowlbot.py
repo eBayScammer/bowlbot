@@ -17,14 +17,10 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.author.id != client.user.id and ":bowlcut:" in message.content:
-        return
-    elif message.author.id != client.user.id and "bowl" in message.content:
+    if message.author.id != client.user.id and "bowl" in message.content:
         await client.send_message(message.channel, message.content.replace("bowl", "<:bowlcut:492887126820651028>"))
         await client.delete_message(message)
-    if message.author.id != client.user.id and ":max:" in message.content:
-        return
-    elif message.author.id != client.user.id and "max" in message.content:
+    if message.author.id != client.user.id and "max" in message.content:
         await client.send_message(message.channel, message.content.replace("max", "<:max:536609206829056014>"))
         await client.delete_message(message)
 
