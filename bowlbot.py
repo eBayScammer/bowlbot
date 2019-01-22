@@ -27,8 +27,8 @@ async def on_message(message):
         await client.send_message(message.channel, message.content.replace("max", "<:max:536609206829056014>"))
         await client.delete_message(message)
     elif message.content.startswith("!version"):
-        emb = (discord.Embed(description="-Added this thing", colour=0x3DF270))
-        emb.set_author(name="Version 0.4.2", icon_url='https://i.kym-cdn.com/photos/images/original/001/288/150/85a.jpg')
+        emb = (discord.Embed(description="- Max and Derrick in same sentence", colour=0x3DF270))
+        emb.set_author(name="Version 0.4.3", icon_url='https://i.kym-cdn.com/photos/images/original/001/288/150/85a.jpg')
         await client.send_message(message.channel, embed=emb)
     elif message.content.startswith("!8"):
         await client.send_message(message.channel, random.choice(["It is certain",
